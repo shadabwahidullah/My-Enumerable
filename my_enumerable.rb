@@ -1,23 +1,17 @@
 module MyEnumerable
   def all?
-    @list.each do |e|
-      return false unless yield e
-    end
+    each { |e| return false unless yield e }
     true
   end
 
   def any?
-    @list.each do |e|
-      return true if yield e
-    end
+    each { |e| return true if yield e }
     false
   end
 
   def filter
     filtered = []
-    @list.each do |e|
-      filtered.push(e) if yield e
-    end
+    each { |e| filtered.push(e) if yield e }
     filtered
   end
 end
