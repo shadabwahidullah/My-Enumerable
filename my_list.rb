@@ -8,7 +8,9 @@ class MyList
 end
 
 def each(&block)
-  @list.each(&block)
+  @list.each do |number|
+    block.call(number)
+  end
 end
 
 list = MyList.new(1, 2, 3, 4)
