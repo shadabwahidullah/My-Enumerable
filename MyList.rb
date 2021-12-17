@@ -1,10 +1,10 @@
 require_relative 'MyEnumerable'
 
 class MyList
-    include MyEnumerable
-    def initialize(*args)
-        @list = args
-    end
+  include MyEnumerable
+  def initialize(*args)
+    @list = args
+  end
 end
 
 list = MyList.new(1, 2, 3, 4)
